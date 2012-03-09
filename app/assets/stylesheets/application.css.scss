@@ -55,13 +55,20 @@ body
 h1#page_heading
 {
   font-size: 24pt;
-	color: #000 !important;
+  color: #000 !important;
+  margin-bottom: 0;
+}
+
+h2#sub_heading
+{
+  color: #000051;
+  margin-top: -10px;
 }
 
 h2
 {
   font-size: 1.4em;
-  color: #333333;
+  color: #577333;
 }
 
 h2 a, h3, h4, h5

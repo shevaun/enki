@@ -15,13 +15,7 @@ group :assets do
 end
 
 platforms :ruby do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
-end
-
-platforms :jruby do
-  gem 'activerecord-jdbcsqlite3-adapter'
-  gem 'trinidad'
-  gem 'jruby-openssl'
+  gem 'sqlite3'
 end
 
 gem 'jquery-rails'
