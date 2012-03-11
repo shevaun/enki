@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/xaviershay/lesstile
+  revision: 655a3b3c17e6007171714fca3eafddbcdc4d884f
+  specs:
+    lesstile (1.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -96,7 +102,6 @@ GEM
       addressable (~> 2.2.6)
       ffi (~> 1.0.9)
       spoon (~> 0.0.1)
-    lesstile (1.0.1)
     mail (2.4.1)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -201,7 +206,7 @@ DEPENDENCIES
   factory_girl
   formtastic
   jquery-rails
-  lesstile
+  lesstile!
   nokogiri (~> 1.5.0)
   open_id_authentication
   rack-openid
