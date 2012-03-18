@@ -8,7 +8,6 @@ set :scm, :git
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
 set :rvm_ruby_string, '1.9.3-p125'
-set :rvm_type, :user
 set :branch, 'livetocode'
 
 server 'alpha.livetocode.co.nz', :app, :web, :db, primary: true
