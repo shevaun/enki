@@ -22,4 +22,11 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
+
+  desc "symlink database file"
+  task :symlink_database_file, :roles => :app do
+    run "ln -s /var/apps/livetocode/shared/database.yml #{release_path}/config/database.yml"
+  end
 end
+
+after  'deploy:update_code',  'deploy:symlink_database_file'
