@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', '3.2.2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -14,20 +11,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-platforms :ruby do
-  gem 'sqlite3'
-end
-
+gem 'pg'
 gem 'jquery-rails'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug'
 
 # Bundle the extra gems:
 gem 'RedCloth', '~> 4.2.9', :require => 'redcloth'
@@ -55,5 +40,8 @@ group :test do
 end
 
 group :development, :test do
+  gem 'unicorn'
   gem 'rspec-rails'
+  gem 'capistrano'
+  gem 'sqlite3'
 end
