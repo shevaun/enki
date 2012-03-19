@@ -28,7 +28,8 @@ body {
   margin: 5px auto;
   min-height: 400px;
   background-color: #EEE;
-  border-top: solid 1px $light-blue;
+  border: solid 1px $light-blue;
+  border-radius: 4px;
 }
 
 #footer {
@@ -42,7 +43,6 @@ body {
   padding-left: 5px;
   color: $light-blue;
   font-weight: bold;
-  border-bottom: solid 1px $light-blue;
 }
 
 /* Headings */
@@ -124,8 +124,9 @@ img {
 
   input {
     border: solid 1px $light-grey;
-    line-height: 1.5em;
+    font-size: 16px;
     width: 200px;
+    border-radius: 4px;
   }
 
   form {
