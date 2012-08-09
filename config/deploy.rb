@@ -5,7 +5,6 @@ set :repository,  "git://github.com/shevaun/enki.git"
 set :scm, :git
 
 #RVM bootstrap
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
 set :rvm_ruby_string, '1.9.3-p194'
 set :branch, 'livetocode'
@@ -29,3 +28,6 @@ namespace :deploy do
 end
 
 before 'deploy:assets:precompile', 'deploy:symlink_database_file'
+
+# if you want to clean up old releases on each deploy uncomment this:
+after "deploy:restart", "deploy:cleanup"

@@ -43,6 +43,7 @@ group :development, :test do
   gem 'unicorn'
   gem 'rspec-rails'
   gem 'capistrano'
+  gem 'rvm-capistrano'
   gem 'sqlite3'
 end
 
