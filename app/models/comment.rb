@@ -29,9 +29,10 @@ class Comment < ActiveRecord::Base
   end
 
   def requires_openid_authentication?
-    return false unless author
+    # return false unless author
 
-    !!(author =~ %r{^https?://} || author.index('.'))
+    # !!(author =~ %r{^https?://} || author.index('.'))
+    true
   end
 
   def trusted_user?
