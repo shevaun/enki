@@ -1,0 +1,19 @@
+<h2>Post a comment</h2>
+<% unless @comment.errors.empty? -%>
+  <div class="errors">
+    <h3>Comment not added!</h3>
+    <ul>
+      <% @comment.errors.each do |error, message| -%>
+        <li><%= message %></li>
+      <% end -%>
+    </ul>
+  </div>
+<% end -%>
+<%= form_for([@post, @comment]) do |form| -%>
+  <div>
+    <p><%= form.text_field :author %><label for="comment_author"><small>Name (required)</small></label></p>
+    <p><%= form.text_field :author_url %><label for="comment_author_url"><small><a href="http://openidexplained.com/" target="_blank">OpenID</a> (required)</small></label></p>
+    <p><%= form.text_area :body %><br><small>(<a href="http://lesstile.rubyforge.org" target="_blank">lesstile enabled</a> - surround code blocks with ---)</small></p>
+    <p><%= submit_tag "Add Comment" %></p>
+  </div>
+<% end -%>

@@ -12,11 +12,17 @@ class Comment < ActiveRecord::Base
 
   after_create :send_notification
 
-  validates_presence_of :author, :body, :post
+  validates :post, presence: true
+  validates :author, presence: {message: 'Please provide your name'}
+  validates :body, presence: {message: 'Please comment'}
+  validates :author_url, presence: {message: 'Please provide your OpenID identity URL'}
+
   validate :open_id_error_should_be_blank
 
+  attr_accessible :author, :body, :author_url
+
   def open_id_error_should_be_blank
-    errors.add(:base, openid_error) unless openid_error.blank?
+    errors.add(:author_url, openid_error) unless openid_error.blank?
   end
 
   def apply_filter
@@ -70,10 +76,6 @@ class Comment < ActiveRecord::Base
   end
 
   class << self
-    def protected_attribute?(attribute)
-      [:author, :body].include?(attribute.to_sym)
-    end
-
     def new_with_filter(params)
       comment = Comment.new(params)
       comment.created_at = Time.now
