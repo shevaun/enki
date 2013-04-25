@@ -63,6 +63,7 @@ class Post < ActiveRecord::Base
     end
 
     def find_by_permalink(year, month, day, slug, options = {})
+      raise(ActiveRecord::RecordNotFound) unless slug.valid_encoding?
       begin
         day = Time.parse([year, month, day].collect(&:to_i).join("-")).midnight
         post = find_all_by_slug(slug, options).detect do |post|
