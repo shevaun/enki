@@ -6,7 +6,7 @@ set :scm, :git
 
 #RVM bootstrap
 require 'rvm/capistrano'
-set :rvm_ruby_string, '1.9.3-p194'
+set :rvm_ruby_string, '1.9.3-p448'
 set :branch, 'livetocode'
 set :rvm_type, :system
 set :rvm_path, "/usr/local/rvm"
