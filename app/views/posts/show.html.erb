@@ -1,13 +1,16 @@
-<% content_for(:page_title) do -%>
-<%= post_title(@post) -%>
+<% content_for :page_title do -%>
+  <%= post_title @post -%>
 <% end -%>
-<%= render :partial => 'posts/post', :locals => {:post => @post} %>
-<ol class="commentlist">
+
+<%= render @post %>
+
+<ol id="comments" class="commentlist">
   <% @post.approved_comments.each do |comment| -%>
-  <li<%=raw cycle(' class="alt"', '') %> id="comment-<%= comment.id %>">
-    <%= render :partial => 'comments/comment', :locals => {:comment => comment} %>
-  </li>
+    <li<%=raw cycle(' class="alt"', '') %> id="comment-<%= comment.id %>">
+      <%= render comment %>
+    </li>
   <% end -%>
 </ol>
+
 <div class="related">Looking for more? Head on over to the <%= link_to("archives", archives_path) %>.</div>
-<%#= render :partial => 'comment' %>
+<%= render :partial => 'comment' %>

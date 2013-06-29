@@ -10,16 +10,8 @@ class Comment < ActiveRecord::Base
   after_save            :denormalize
   after_destroy         :denormalize
 
-  after_create :send_notification
-
-  validates :post, presence: true
-  validates :author, presence: {message: 'Please provide your name'}
-  validates :body, presence: {message: 'Please comment'}
-  validates :author_url, presence: {message: 'Please provide your OpenID identity URL'}
-
+  validates             :author, :body, :post, :presence => true
   validate :open_id_error_should_be_blank
-
-  attr_accessible :author, :body, :author_url
 
   def open_id_error_should_be_blank
     errors.add(:author_url, openid_error) unless openid_error.blank?
@@ -35,10 +27,9 @@ class Comment < ActiveRecord::Base
   end
 
   def requires_openid_authentication?
-    # return false unless author
+    return false unless author
 
-    # !!(author =~ %r{^https?://} || author.index('.'))
-    true
+    !!(author =~ %r{^https?://} || author =~ /\w+\.\w+/)
   end
 
   def trusted_user?
@@ -76,6 +67,10 @@ class Comment < ActiveRecord::Base
   end
 
   class << self
+    def protected_attribute?(attribute)
+      [:author, :body].include?(attribute.to_sym)
+    end
+
     def new_with_filter(params)
       comment = Comment.new(params)
       comment.created_at = Time.now
