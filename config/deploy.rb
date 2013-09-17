@@ -17,18 +17,13 @@ set :deploy_to, "/var/apps/livetocode"
 set :use_sudo, false
 
 require 'capistrano/shared_file'
-set :shared_files, %w(.env)
+set :shared_files, %w(.env config/database.yml)
 
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-  end
-
-  desc "symlink database file"
-  task :symlink_database_file, :roles => :app do
-    run "ln -s /var/apps/livetocode/shared/database.yml #{release_path}/config/database.yml"
   end
 end
 
