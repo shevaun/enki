@@ -27,7 +27,5 @@ namespace :deploy do
   end
 end
 
-before 'deploy:assets:precompile', 'deploy:symlink_database_file'
-
 # if you want to clean up old releases on each deploy uncomment this:
 after "deploy:restart", "deploy:cleanup"
