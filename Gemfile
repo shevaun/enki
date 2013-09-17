@@ -1,17 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-  gem 'therubyracer'
-end
-
+gem 'rails', '~> 4.0.0'
 gem 'pg'
+
+gem 'sass-rails', '~> 4.0.0'
+gem 'uglifier', '>= 1.0.3'
+gem 'therubyracer'
+
 gem 'jquery-rails'
 
 # Bundle the extra gems:
@@ -31,7 +26,7 @@ gem 'open_id_authentication'
 # and rake tasks are available in development mode:
 group :test do
   gem 'database_cleaner'
-  gem 'cucumber-rails',    :require => false
+  gem 'cucumber-rails', '~> 1.4.0',   :require => false
   gem 'cucumber-websteps', :require => false
   gem 'factory_girl'
   gem 'rspec'
