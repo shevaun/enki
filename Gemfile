@@ -8,6 +8,7 @@ gem 'uglifier', '>= 1.0.3'
 gem 'therubyracer'
 
 gem 'jquery-rails'
+gem 'activerecord-session_store'
 
 # Bundle the extra gems:
 gem 'RedCloth', '~> 4.2.9', :require => 'redcloth'

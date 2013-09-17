@@ -22,6 +22,10 @@ GEM
       activesupport (= 4.0.0)
       arel (~> 4.0.0)
     activerecord-deprecated_finders (1.0.3)
+    activerecord-session_store (0.0.1)
+      actionpack (>= 4.0.0.beta, < 5)
+      activerecord (>= 4.0.0.beta, < 5)
+      railties (>= 4.0.0.beta, < 5)
     activesupport (4.0.0)
       i18n (~> 0.6, >= 0.6.4)
       minitest (~> 4.2)
@@ -226,6 +230,7 @@ PLATFORMS
 DEPENDENCIES
   RedCloth (~> 4.2.9)
   aaronh-chronic
+  activerecord-session_store
   capistrano
   coderay (~> 1.0.5)
   cucumber-rails (~> 1.4.0)
