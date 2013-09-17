@@ -16,6 +16,9 @@ set :user, "deploy"
 set :deploy_to, "/var/apps/livetocode"
 set :use_sudo, false
 
+require 'capistrano/shared_file'
+set :shared_files, %w(.env)
+
 namespace :deploy do
   task :start do ; end
   task :stop do ; end

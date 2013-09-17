@@ -21,6 +21,7 @@ gem 'formtastic'
 gem 'will_paginate', '~> 3.0.2'
 gem 'exception_notification', '~> 2.5.2'
 gem 'open_id_authentication'
+gem 'dotenv-rails'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
@@ -41,6 +42,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capistrano'
   gem 'rvm-capistrano'
+  gem 'capistrano-shared_file', git: "git://github.com/shevaun/capistrano-shared_file.git"
   gem 'sqlite3'
 end
 

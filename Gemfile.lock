@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/shevaun/capistrano-shared_file.git
+  revision: 4a5f2f46d50e5cbdac723bb5e16676d88a6eaa19
+  specs:
+    capistrano-shared_file (0.1.1)
+      capistrano (~> 2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -37,7 +44,7 @@ GEM
     atomic (1.1.14)
     atomic (1.1.14-java)
     builder (3.1.4)
-    capistrano (2.15.4)
+    capistrano (2.15.5)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
@@ -66,6 +73,9 @@ GEM
       launchy
     database_cleaner (1.0.1)
     diff-lcs (1.2.4)
+    dotenv (0.7.0)
+    dotenv-rails (0.7.0)
+      dotenv (= 0.7.0)
     erubis (2.7.0)
     exception_notification (2.5.2)
       actionmailer (>= 3.0.4)
@@ -113,11 +123,11 @@ GEM
     mime-types (1.25)
     minitest (4.7.5)
     multi_json (1.8.0)
-    net-scp (1.1.1)
+    net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
-    net-ssh (2.6.7)
+    net-ssh (2.7.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     nokogiri (1.5.9)
@@ -232,10 +242,12 @@ DEPENDENCIES
   aaronh-chronic
   activerecord-session_store
   capistrano
+  capistrano-shared_file!
   coderay (~> 1.0.5)
   cucumber-rails (~> 1.4.0)
   cucumber-websteps
   database_cleaner
+  dotenv-rails
   exception_notification (~> 2.5.2)
   factory_girl
   formtastic
